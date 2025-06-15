@@ -1,23 +1,50 @@
-SplitFinance
-A backend microservices-based financial transaction monitoring system using Java Spring Boot and MySQL.
+**SplitFinance**:
+	A backend microservices-based financial transaction monitoring system using Java Spring Boot and MySQL.
 
-Overview
-SplitFinance is designed to track financial transactions, manage data efficiently, and provide observability using structured logging and metrics.
+**Overview**:
+	SplitFinance is designed to track financial transactions, manage data efficiently, and provide observability using structured logging and metrics.
 
-Features
-Transaction Management: Secure storage and retrieval of financial records
+**Features**:
+1. Authentication & Authorization:
+		JWT-Based Security: Secure every service endpoint using Spring Security.
+		Role-Based Access Control: Support different user roles (e.g., user, admin).
 
-User Authentication: JWT-based authentication for secure API access
+2. User Management:
+		User Registration: API for new user signup.
+		Profile Management: Endpoints to view, update, and delete user profiles.
 
-Metrics & Logging: Integrated with Micrometer and Spring Boot Actuator
+3. Expense Management:
+		Expense Creation/Editing: Users can create new expenses and update or delete them.
+		Expense Splitting Options: Support for different split types—equal, unequal, or percentage-based splits.
 
-Database: MySQL for structured transaction storage
+4. Group Management:
+		Group Creation: Allow users to form groups and add friends.
+		Group Expense Summary: Overview of total expenses and pending settlement transactions within a group.
 
-Configuration Management: Environment-based property handling (config files ignored in .gitignore)
+5. Settlement & Reconciliation:
+		Minimization of Transactions: Calculate and suggest the minimal set of payments required to settle all debts.
+		Notification System:
 
-Tech Stack
-Backend: Java Spring Boot
+6. Real-Time Alerts:
+   	WebSockets or push notifications for updates on expense additions or settlements.
 
-Database: MySQL
+8. Audit and Logging:
 
-Security: Spring Security, JWT
+9. Activity Logs:
+    Maintain audit trails for changes such as expense modifications or user actions.
+
+**Architectural Planning & Microservices Breakdown**
+**Service Decomposition**:
+1. User Service: Handles user operations and authentication.
+2. Expense Service: Manages all endpoints related to expense entry, updates, deletion, and querying past expenses.
+3. Group/Settlement Service: Manages group creation, member management, and settlement calculations.
+3. Notification Service: Deals with asynchronous notifications and alerts.
+
+**Future services**:
+Third-Party/Payment Integration:
+Payment Gateway Integration: Enabling users to complete settlements online.
+Reporting and Analytics:
+Data Export/Visualization: Provide downloadable CSV reports or visual graphs of expenses over time.
+API Gateway: Use Spring Cloud Gateway to route client requests to the appropriate microservice.
+Inter-Service Messaging: Consider lightweight messaging (e.g., Kafka or RabbitMQ) for notifying relevant services about events like a new expense being added.
+Communication:
