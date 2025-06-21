@@ -1,8 +1,6 @@
 **SplitFinance**:
 	A backend microservices-based financial transaction monitoring system using Java Spring Boot and MySQL.
-
-**Overview**:
-	SplitFinance is designed to track financial transactions, manage data efficiently, and provide observability using structured logging and metrics.
+	SplitFinance is designed to track financial transactions, manage data efficiently, and provide observability using structured logging and metrics. 
 
 **Features**:
 1. Authentication & Authorization:
